@@ -1,0 +1,7 @@
+script-src 'self'
+    'sha256-hVqSdzYGZPpjolc+CHBmrtFq2PjX56dsP8btshGEqt8=' # v1
+
+    # v2
+    'sha256-0RiCjTjdCIt+S9XlTBPQ4ClKV8oPRfNzh+TmB53LDvo='
+    'sha256-UWpmtcI92UPdM9zOb9YIGEgW+DmjS1rawWZE3fIIMjY='
+;
