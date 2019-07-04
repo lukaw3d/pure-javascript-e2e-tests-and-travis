@@ -59,6 +59,12 @@ beforeEach(() => {
 });
 
 
+it('Opening local file should work without errors', async () => {
+    expect(pageErrors).toEqual([]);
+    await page.goto(__dirname + '/a.html');
+    expect(pageErrors).toEqual([]);
+});
+
 describe('Content-Security-Policy', () => {
     it('Opening local file with strict CSP should log violations', async () => {
         const originalContent = String(await fs.promises.readFile('./a.html'));
