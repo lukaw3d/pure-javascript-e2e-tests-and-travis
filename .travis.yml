@@ -1,12 +1,16 @@
-language: node_js
-node_js: stable
-
-cache:
-  directories:
-    - node_modules
-
+language: python
+python:
+  - "3.6"
+  - "3.5"
+cache: pip
+matrix:
+  fast_finish: true
+# commands to install dependencies
 install:
-  - npm install --no-package-lock
+  - mkdir empty_dir
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then nvm install 10; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then npm install; fi
 
+# commands to run tests
 script:
-  - npm run test
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then npm run test; fi
